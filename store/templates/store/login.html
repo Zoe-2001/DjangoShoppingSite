@@ -1,0 +1,22 @@
+{% extends "store/base.html" %}
+
+{% block user-info %}
+    <div>
+        <a href="{% url 'register' %}">
+            <button id = "id_register_link">Register</button>
+        </a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <p class="small-heading" id = "id_page_name">Login</p>
+
+    <form method="post" action="{% url 'login' %}">
+        <table>
+            {{form}}
+        </table>
+        {% csrf_token %}
+        <button id = "id_login_button">Submit</button>
+    </form>
+
+{% endblock %}

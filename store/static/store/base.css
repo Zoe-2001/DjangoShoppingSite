@@ -1,0 +1,95 @@
+.big-heading {
+    background: #1abc9c;
+}
+
+.heading-text {
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 25px 50px;
+    color: white;
+}
+
+.small-heading {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.user-info {
+    text-align: right;
+    font-family: sans-serif;
+    padding-right: 10px;
+    font-size: x-large;
+}
+
+.post {
+    color:#1abc9c;
+    font-size: large;
+    font-family: sans-serif;
+}
+.comment {
+    color:#1a8bbc;
+    font-size: large;
+    font-family: sans-serif;
+    margin : 30px;
+}
+
+.content {
+    margin: 0px;
+}
+
+.profile_text {
+  border: 2px solid #1abc9c;
+}
+
+.errorlist {
+    color:red;
+}
+
+.list {
+    padding: 3px;
+}
+
+.list-link {
+    padding: 5px;
+}
+
+.list-link:hover {
+     background-color:lightgray;
+}
+
+th {
+    font-weight: normal;
+    text-align: left;
+}
+
+a {
+     text-decoration: none;
+     color:black;
+}
+
+button {
+    font-size: x-large;
+    padding: 3px;
+}
+
+input {
+    font-size: x-large;
+}
+
+form {
+    padding: 4px;
+}
+
+
+.navlink {
+    background-color: lightgray;
+}
+
+.letter {
+    font-family: sans-serif;
+    font-size: x-large;
+    padding : 30px;
+}
