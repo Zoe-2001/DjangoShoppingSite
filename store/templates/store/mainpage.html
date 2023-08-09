@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Site</title>
     {% load static %}
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <link href="{% static 'store/styles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'store/base.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'store/hover.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'store/list.js' %}" type="text/javascript"></script>
+
 </head>
 
 <script>
@@ -30,25 +39,46 @@
                 });
             });
         });
-    });
 
-  document.addEventListener("DOMContentLoaded", function () {
-        const categories = document.querySelectorAll(".gender a");
-        const products = document.querySelectorAll(".product");
-
-        categories.forEach(category => {
+        const genderCategories = document.querySelectorAll(".gender a");
+        genderCategories.forEach(category => {
             category.addEventListener("click", function (event) {
                 event.preventDefault();
                 const selectedCategory = this.textContent;
 
                 products.forEach(product => {
-                    const productCategory = product.getAttribute("data-gender");
+                    const productGender = product.getAttribute("data-gender");
 
-                    if (selectedCategory === productCategory) {
+                    if (selectedCategory === productGender) {
                         product.style.display = "block";
                     } else {
                         product.style.display = "none";
                     }
+                });
+            });
+        });
+
+        const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const productId = this.getAttribute("data-product-id");
+                const formData = new FormData();
+                formData.append('product_id', productId);
+
+                fetch('{% url "add_to_cart" %}', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                    },
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
                 });
             });
         });
@@ -58,7 +88,9 @@
 <body>
     <header>
         <div class="logo">Shopping Site</div>
-        <div class="cart"><a href="#"><img src="cart-icon.png" alt="Shopping Cart"></a></div>
+        <div class="cart"><a href="{% url 'cart' %}">View Cart</a></div>
+         <span><i class="shopping-cart"></i></span>
+
     </header>
     <nav>
         <ul>
@@ -80,43 +112,14 @@
         </ul>
     </nav>
     <main>
-        <section class="product" data-category="Running" data-gender="Men">
-            <img src="product1.jpg" alt="Product 1">
-            <h3>Men's Running Shoes</h3>
-            <p class="price">$49.99</p>
-            <button>Add to Cart</button>
+        {% for product in products %}
+        <section class="product" data-product-id="{{ product.id }}" data-category="{{ product.category }}" data-gender="{{ product.gender }}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p class="price">${{ product.price }}</p>
+            <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Add to Cart</button>
         </section>
-        <section class="product" data-category="Yoga" data-gender="Women">
-            <img src="product2.jpg" alt="Product 2">
-            <h3>Women's Yoga Pants</h3>
-            <p class="price">$29.99</p>
-            <button>Add to Cart</button>
-        </section>
-      <section class="product" data-category="Training" data-gender="Men">
-        <img src="product3.jpg" alt="Product 3">
-        <h3>Men's Training Shorts</h3>
-        <p class="price">$19.99</p>
-        <button>Add to Cart</button>
-    </section>
-    <section class="product" data-category="Training" data-gender="Women">
-        <img src="product4.jpg" alt="Product 4">
-        <h3>Women's Training Tank Top</h3>
-        <p class="price">$24.99</p>
-        <button>Add to Cart</button>
-    </section>
-    <section class="product" data-category="Swimming" data-gender="Men">
-        <img src="product5.jpg" alt="Product 5">
-        <h3>Men's Swim Trunks</h3>
-        <p class="price">$14.99</p>
-        <button>Add to Cart</button>
-    </section>
-    <section class="product" data-category="Swimming" data-gender="Women">
-        <img src="product6.jpg" alt="Product 6">
-        <h3>Women's Swimsuit</h3>
-        <p class="price">$29.99</p>
-        <button>Add to Cart</button>
-    </section>
-        <!-- More product sections can be added here -->
+        {% endfor %}
     </main>
 </body>
 

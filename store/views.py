@@ -3,14 +3,16 @@ from django.urls import reverse
 from django.utils import timezone,formats
 
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, JsonResponse
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+
 from django.contrib.auth.models import User
 
 from store.forms import LoginForm, RegisterForm
-from store.models import Profile, Cart
+from store.models import Product, CartItem
 
 from django.views.decorators.csrf import ensure_csrf_cookie
 
@@ -74,6 +76,10 @@ def register_action(request):
     new_user = authenticate(username=form.cleaned_data['username'],
                             password=form.cleaned_data['password'])
 
+    new_item = Product(name = "men's clothes", category = "Yoga", gender = "Men",
+                       image = "/static/images/mencloth.jpg", price = "10.99")
+    new_item.save()
+
     login(request, new_user)
     return redirect(reverse('mainpage'))
 
@@ -95,9 +101,34 @@ def mainpage_action(request):
     if not login_check(request):
         return _my_json_error_response("You must be logged in to do this operation", status=401)
 
+    products = Product.objects.all()
     # Just display global page form if this is a GET request.
     if request.method == 'GET':
-        return render(request, 'store/mainpage.html')
+        return render(request, 'store/mainpage.html', {'products': products})
 
-    return render(request, 'store/mainpage.html')
+    return render(request, 'store/mainpage.html', {'products': products})
 
+@login_required
+def cart(request):
+    user = request.user
+    cart_items = CartItem.objects.filter(user=user)
+    return render(request, 'store/cart.html', {'cart_items': cart_items})
+
+
+
+@login_required
+def add_to_cart(request):
+    user = request.user
+    product_id = int(request.POST['product_id'])
+
+    try:
+        cart_item = CartItem.objects.get(user=user, product_id=product_id)
+        cart_item.quantity += 1
+        cart_item.save()
+    except CartItem.DoesNotExist:
+        product = Product.objects.get(pk=product_id)
+        cart_item = CartItem(user=user, product=product, quantity=1)
+        cart_item.save()
+
+
+    return JsonResponse({'message': 'Product added to cart.'})
