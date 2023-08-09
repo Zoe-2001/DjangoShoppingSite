@@ -92,3 +92,65 @@ button:hover {
     height: 24px;
     margin: 0 10px 0 0;
 }
+/* For items in shopping cart*/
+.cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.cart-item img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.cart-item h3 {
+    margin: 0;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.quantity-form {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #0056b3;
+}
+
+input[name="quantity"] {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}

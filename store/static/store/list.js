@@ -1,4 +1,6 @@
 "use strict"
+
+
 /* For adding to cart animation*/
 $(document).ready(function() {
     $('.add-to-cart-btn').on('click', function () {

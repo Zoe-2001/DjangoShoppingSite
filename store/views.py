@@ -15,7 +15,7 @@ from store.forms import LoginForm, RegisterForm
 from store.models import Product, CartItem
 
 from django.views.decorators.csrf import ensure_csrf_cookie
-
+from django.contrib import messages
 import json
 
 
@@ -132,3 +132,66 @@ def add_to_cart(request):
 
 
     return JsonResponse({'message': 'Product added to cart.'})
+
+
+@login_required
+def update_cart(request):
+    if request.method == 'POST':
+        cart_item_id = int(request.POST['cart_item_id'])
+        new_quantity = int(request.POST['quantity'])
+
+        try:
+            cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
+            cart_item.quantity = new_quantity
+            cart_item.save()
+            messages.success(request, 'Cart item updated.')
+        except CartItem.DoesNotExist:
+            messages.error(request, 'Cart item not found.')
+
+    return redirect('cart')
+
+
+@login_required
+def remove_from_cart(request):
+    if request.method == 'POST':
+        cart_item_id = int(request.POST['cart_item_id'])
+
+        try:
+            cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
+            cart_item.delete()
+            messages.success(request, 'Cart item removed.')
+        except CartItem.DoesNotExist:
+            messages.error(request, 'Cart item not found.')
+
+    return redirect('cart')
+
+from django.shortcuts import render, redirect
+from .models import CartItem
+from django.contrib import messages
+
+@login_required
+def increase_quantity(request, cart_item_id):
+    try:
+        cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
+        cart_item.quantity += 1
+        cart_item.save()
+        messages.success(request, 'Quantity increased.')
+    except CartItem.DoesNotExist:
+        messages.error(request, 'Cart item not found.')
+
+    return redirect('cart')
+
+@login_required
+def decrease_quantity(request, cart_item_id):
+    try:
+        cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
+        if cart_item.quantity > 1:
+            cart_item.quantity -= 1
+            cart_item.save()
+            messages.success(request, 'Quantity decreased.')
+        else:
+            messages.info(request, 'Quantity cannot be less than 1.')
+    except CartItem.DoesNotExist:
+        messages.error(request, 'Cart item not found.')
+
+    return redirect('cart')
