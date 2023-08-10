@@ -39,7 +39,6 @@
                                     {% csrf_token %}
                                     <button class="change_qty">+</button>
                                 </form>
-                                x ${{ cart_item.product.price }}
 
                             </div>
 
@@ -68,7 +67,9 @@
             </ul>
           </div>
 
-          <div class="promoCode"><label>Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />
+          <div class="special"><div class="specialContent">Free gift with purchase!, gift wrap, etc!!</div></div>
+
+            <div class="promoCode"><label>Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />
             <a href="#" class="btn"></a>
           </div>
 

@@ -75,6 +75,18 @@ button {
     padding: 3px;
 }
 
+button[type="add-to-cart-btn"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="add-to-cart-btn"]:hover {
+    background-color: #218838;
+}
 input {
     font-size: x-large;
 }

@@ -17,7 +17,7 @@
       "name": "Women's Yoga Bra",
       "category": "Yoga",
       "gender": "Women",
-      "image": "/static/images/womenyogabra.jpg",
+      "image": "/static/images/womenyogabra.png",
       "price": "28.99"
     }
   },
@@ -28,7 +28,7 @@
       "name": "Men's Compression T-shirt",
       "category": "Yoga",
       "gender": "Men",
-      "image": "/static/images/mencompression.jpg",
+      "image": "/static/images/mencompression.png",
       "price": "20.99"
     }
   },
@@ -36,10 +36,10 @@
     "model": "store.product",
     "pk": 4,
     "fields": {
-      "name": "Women's Home Shorts",
-      "category": "Yoga",
+      "name": "Women's Running Shorts",
+      "category": "Running",
       "gender": "Women",
-      "image": "/static/images/womenhomeshorts.jpg",
+      "image": "/static/images/womenhomeshorts.png",
       "price": "18.99"
     }
   },
@@ -50,7 +50,7 @@
       "name": "Men's Swimming Suit",
       "category": "Swimming",
       "gender": "Men",
-      "image": "/static/images/menswimsuit.jpg",
+      "image": "/static/images/menswimsuit.png",
       "price": "20.99"
     }
   },
@@ -61,7 +61,7 @@
       "name": "Women's Swimming Suit",
       "category": "Yoga",
       "gender": "Women",
-      "image": "/static/images/womenswimsuit.jpg",
+      "image": "/static/images/womenswimsuit.png",
       "price": "20.99"
     }
   },
@@ -72,7 +72,7 @@
       "name": "Men's Swimming Suit",
       "category": "Swimming",
       "gender": "Men",
-      "image": "/static/images/menswimsuit.jpg",
+      "image": "/static/images/menswimsuit.png",
       "price": "20.99"
     }
   },
@@ -83,7 +83,7 @@
       "name": "Women's Hydration Pack",
       "category": "Cycling",
       "gender": "Women",
-      "image": "/static/images/womenbag.jpg",
+      "image": "/static/images/womenbag.png",
       "price": "20.99"
     }
   },
@@ -94,7 +94,7 @@
       "name": "Men's Hydration Pack",
       "category": "Cycling",
       "gender": "Men",
-      "image": "/static/images/menbag.jpg",
+      "image": "/static/images/menbag.png",
       "price": "20.99"
     }
   }
