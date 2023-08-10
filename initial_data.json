@@ -69,11 +69,11 @@
     "model": "store.product",
     "pk": 7,
     "fields": {
-      "name": "Men's Swimming Suit",
+      "name": "Men's Cheaper Swimming Suit",
       "category": "Swimming",
       "gender": "Men",
       "image": "/static/images/menswimsuit.png",
-      "price": "20.99"
+      "price": "10.99"
     }
   },
   {
