@@ -1,56 +1,90 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Shopping Cart</title>
-    {% load static %}
-    <link href="{% static 'store/styles.css' %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <header>
-        <!-- Header content -->
-    </header>
-    <nav>
-        <!-- Navigation content -->
-    </nav>
+{% extends "store/base.html" %}
+
+{% block user-info %}
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
     <main>
-        <h1>Your Shopping Cart</h1>
-        <a href="{% url 'mainpage' %}">Back to Main Page</a>
+        <div class="wrap cf">
+          <h1 class="projTitle">Shopping Cart</h1>
+          <div class="heading cf">
+            <h1>My Cart</h1>
+            <a href="{% url 'mainpage' %}" class="continue">Continue Shopping</a>
+          </div>
+          <div class="cart">
+            <ul class="cartWrap">
+              {% for cart_item in cart_items %}
+                <div class="items">
+                    <div class="infoWrap">
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for cart_item in cart_items %}
-                <div class="cart-item">
-                    <img src="{{ cart_item.product.image.url }}" alt="{{ cart_item.product.name }}">
-                    <h3>{{ cart_item.product.name }}</h3>
-                    <p>Price: ${{ cart_item.product.price }}</p>
+                        <div class="itemImgWrap">
+                            <img src="{{ cart_item.product.image.url }}" alt="{{ cart_item.product.name }}">
+                        </div>
 
-                    <form method="post" action="{% url 'increase_quantity' cart_item.id %}">
-                        {% csrf_token %}
-                        <button type="submit">+</button>
-                    </form>
+                        <div class="cartSection">
+                            <h3>{{ cart_item.product.name }}</h3>
 
-                    <input type="number" name="quantity" value="{{ cart_item.quantity }}">
+                            <div class="quantity-section">
+                                <form method="post" action="{% url 'decrease_quantity' cart_item.id %}">
+                                    {% csrf_token %}
+                                    <button class="change_qty">-</button>
+                                </form>
+                                <input type="text" class="qty" name="quantity" value="{{ cart_item.quantity }}"/>
+                                <form method="post" action="{% url 'increase_quantity' cart_item.id %}">
+                                    {% csrf_token %}
+                                    <button class="change_qty">+</button>
+                                </form>
+                                x ${{ cart_item.product.price }}
 
-                    <form method="post" action="{% url 'decrease_quantity' cart_item.id %}">
-                        {% csrf_token %}
-                        <button type="submit">-</button>
-                    </form>
+                            </div>
 
-                    <form method="post" action="{% url 'remove_from_cart' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="cart_item_id" value="{{ cart_item.id }}">
-                        <button type="submit">Remove Item</button>
-                    </form>
+                            <p class="stockStatus"> In Stock</p>
+                        </div>
+
+                        <div class="prodTotal cartSection">
+                          <p>${{ cart_item.product.price|floatformat:2}}</p>
+                        </div>
+
+                        <div class="cartSection removeWrap">
+                            <form method="post" action="{% url 'remove_from_cart' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="cart_item_id" value="{{ cart_item.id }}">
+                                <button class="remove">x</button>
+                            </form>
+                        </div>
+
+
+
+
+                    </div>
                 </div>
                 {% endfor %}
-        </table>
+
+            </ul>
+          </div>
+
+          <div class="promoCode"><label>Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />
+            <a href="#" class="btn"></a>
+          </div>
+
+          <div class="subtotal cf">
+            <ul>
+              <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
+
+              <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span></li>
+
+              <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
+              <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
+              <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+            </ul>
+          </div>
+        </div>
+
     </main>
-</body>
-</html>
+
+{% endblock %}

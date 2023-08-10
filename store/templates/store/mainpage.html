@@ -2,7 +2,8 @@
 
 {% block user-info %}
 
-        <div class="cart"><a href="{% url 'cart' %}">
+    </div>
+        <div class="cart-icon"><a href="{% url 'cart' %}">
             <span ><i class="shopping-cart"></i></span>
         </a></div>
 
@@ -11,10 +12,6 @@
 {% block content %}
     <nav>
         <ul>
-            <ul class="gender">
-              <li><a href="#" data-gender="Men">Men</a></li>
-              <li><a href="#" data-gender="Women">Women</a></li>
-            </ul>
             <li class="dropdown">
                 <a href="#">Categories &#9662;</a>
                 <ul class="dropdown-menu">
@@ -26,6 +23,11 @@
                 <li><a href="#" data-category="Cycling">Cycling</a></li>
                 </ul>
             </li>
+            <ul class="gender">
+              <li><a href="#" data-gender="Men">Men</a></li>
+              <li><a href="#" data-gender="Women">Women</a></li>
+            </ul>
+
         </ul>
     </nav>
     <main>

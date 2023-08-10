@@ -17,11 +17,6 @@ header {
     font-size: 24px;
 }
 
-.cart img {
-    width: 30px;
-    height: 30px;
-}
-
 nav ul {
     list-style: none;
     display: flex;
@@ -72,16 +67,26 @@ main {
 }
 
 button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.015em;
+  font-size: 0.75em;
+  padding: 1em;
+  color: #fff;
+  background: #333;
+  font-weight: bold;
+  border-radius: 10px;
+  float: middle;
+  text-align: middle;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -ms-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #f69679;
 }
 
 /* For mainpage cart */
@@ -154,3 +159,18 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #218838;
 }
+
+
+button[type="incrdecr"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="incrdecr"]:hover {
+    background-color: #218838;
+}
+

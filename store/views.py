@@ -76,10 +76,6 @@ def register_action(request):
     new_user = authenticate(username=form.cleaned_data['username'],
                             password=form.cleaned_data['password'])
 
-    new_item = Product(name = "men's clothes", category = "Yoga", gender = "Men",
-                       image = "/static/images/mencloth.jpg", price = "10.99")
-    new_item.save()
-
     login(request, new_user)
     return redirect(reverse('mainpage'))
 
@@ -95,11 +91,9 @@ def _my_json_error_response(message, status=200):
     return HttpResponse(response_json, content_type='application/json', status=status)
 
 
-@login_required
+
 @ensure_csrf_cookie
 def mainpage_action(request):
-    if not login_check(request):
-        return _my_json_error_response("You must be logged in to do this operation", status=401)
 
     products = Product.objects.all()
     # Just display global page form if this is a GET request.
@@ -108,8 +102,11 @@ def mainpage_action(request):
 
     return render(request, 'store/mainpage.html', {'products': products})
 
+
 @login_required
 def cart(request):
+    if not login_check(request):
+        return _my_json_error_response("You must be logged in to do this operation", status=401)
     user = request.user
     cart_items = CartItem.objects.filter(user=user)
     return render(request, 'store/cart.html', {'cart_items': cart_items})
@@ -118,6 +115,9 @@ def cart(request):
 
 @login_required
 def add_to_cart(request):
+    if not login_check(request):
+        return _my_json_error_response("You must be logged in to do this operation", status=401)
+
     user = request.user
     product_id = int(request.POST['product_id'])
 
@@ -135,24 +135,9 @@ def add_to_cart(request):
 
 
 @login_required
-def update_cart(request):
-    if request.method == 'POST':
-        cart_item_id = int(request.POST['cart_item_id'])
-        new_quantity = int(request.POST['quantity'])
-
-        try:
-            cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
-            cart_item.quantity = new_quantity
-            cart_item.save()
-            messages.success(request, 'Cart item updated.')
-        except CartItem.DoesNotExist:
-            messages.error(request, 'Cart item not found.')
-
-    return redirect('cart')
-
-
-@login_required
 def remove_from_cart(request):
+    if not login_check(request):
+        return _my_json_error_response("You must be logged in to do this operation", status=401)
     if request.method == 'POST':
         cart_item_id = int(request.POST['cart_item_id'])
 
@@ -165,12 +150,10 @@ def remove_from_cart(request):
 
     return redirect('cart')
 
-from django.shortcuts import render, redirect
-from .models import CartItem
-from django.contrib import messages
-
 @login_required
 def increase_quantity(request, cart_item_id):
+    if not login_check(request):
+        return _my_json_error_response("You must be logged in to do this operation", status=401)
     try:
         cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
         cart_item.quantity += 1
@@ -183,6 +166,8 @@ def increase_quantity(request, cart_item_id):
 
 @login_required
 def decrease_quantity(request, cart_item_id):
+    if not login_check(request):
+        return _my_json_error_response("You must be logged in to do this operation", status=401)
     try:
         cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
         if cart_item.quantity > 1:
