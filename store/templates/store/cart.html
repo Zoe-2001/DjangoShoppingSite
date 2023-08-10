@@ -39,22 +39,23 @@
                                     {% csrf_token %}
                                     <button class="change_qty">+</button>
                                 </form>
-
                             </div>
 
                             <p class="stockStatus"> In Stock</p>
                         </div>
 
-                        <div class="prodTotal cartSection">
+                        <div class="priceSection">
+                        <div class="priceSection prodTotal">
                           <p>${{ cart_item.product.price|floatformat:2}}</p>
                         </div>
 
-                        <div class="cartSection removeWrap">
+                        <div class="priceSection removeWrap">
                             <form method="post" action="{% url 'remove_from_cart' %}">
                                 {% csrf_token %}
                                 <input type="hidden" name="cart_item_id" value="{{ cart_item.id }}">
                                 <button class="remove">x</button>
                             </form>
+                        </div>
                         </div>
 
 

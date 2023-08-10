@@ -12,7 +12,7 @@ Installation:
    python manage.py loaddata initial_data.json
    python manage.py runserver
 
-Visit http://127.0.0.1:8000 to check the application
+Visit http://localhost:8000 to check the application
 
 P.S.When you want to clear the database, simply delete db.sqlite3 file, then go back to step 4.
 
@@ -20,3 +20,4 @@ P.S.When you want to clear the database, simply delete db.sqlite3 file, then go 
 References:
 https://codepen.io/ehermanson/pen/KwKWEv
 https://codepen.io/alex_rodrigues/pen/rNbaEM
+https://codepen.io/elmahdim/pen/nrWXgX
