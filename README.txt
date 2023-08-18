@@ -1,26 +1,40 @@
 Yuchen Dai - First Task for Internship
 /* A non-live website for a client's sports apparel store*/
 
-Installation:
-1. Install Django
-   python -m pip install django
-2. Clone
-   git clone https://github.com/Zoe71/Intern_Task1.git
-3. Go to the repository
-4. Run the following commands:
-   python manage.py migrate
-   python manage.py loaddata initial_data.json
-   python manage.py runserver
+=====================SETUP======================================
 
-Visit http://localhost:8000 to check the application
-
-P.S.When you want to clear the database, simply delete db.sqlite3 file, then go back to step 4.
+To runit on your local machine:
+  1. Open console in the root directory of the project
+  2. Run the following command, which installs all of the modules listed in therequirements file into our project environment.
+       pip install -r requirements.txt
+  3. Run the following command:
+       python manage.py runserver
+  4. Visit http://localhost:8000
 
 
+=====================USERS======================================
+There are currently 2 users in the database, you can use the following information to log in:
+  1. username: a     password: a
+  2. username: b     password: b
+You can also register new users for testing or presentation
+
+
+=====================RESTART DATABASE======================================
+When you want to clear and recreate the database:
+  1. Delete db.sqlite3 file under the root directory of the project
+  2. Open the console at the project's root directory
+  3. Run the following commands:
+       python manage.py migrate
+       python manage.py loaddata initial_data.json
+  4. Run python manage.py runserver
+  5. Visit http://localhost:8000
+
+
+=====================REFERENCES======================================
 References:
 https://codepen.io/ehermanson/pen/KwKWEv
 https://codepen.io/alex_rodrigues/pen/rNbaEM
 https://codepen.io/elmahdim/pen/nrWXgX
 
-Images all come from
+Images all come from:
 https://www.dickssportinggoods.com
