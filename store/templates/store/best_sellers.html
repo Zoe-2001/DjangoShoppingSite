@@ -1,14 +1,30 @@
-{% extends 'base.html' %}
+{% extends "store/base.html" %}
+
+{% block user-info %}
+
+    <div class="cart-icon"><a href="{% url 'cart' %}">
+        <span ><i class="shopping-cart"></i></span>
+    </a></div>
+
+{% endblock %}
 
 {% block content %}
-    <h2>Best 5 Sellers</h2>
+<div class="wrap cf">
+<h1 class="projTitle">Best Sellers</h1>
+    <div class="heading cf">
+        <h1>Top 5:</h1>
+        <a href="{% url 'mainpage' %}" class="continue">Continue Shopping</a>
+    </div>
     <ul class="product-list">
-        {% for product in best_sellers %}
-            <li>
-                <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                <h3>{{ product.name }}</h3>
-                <p class="price">${{ product.price }}</p>
-            </li>
+        {% for product in top_sellers %}
+            <section class="product" >
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p class="price">${{ product.price }}</p>
+            <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Add to Cart</button>
+        </section>
         {% endfor %}
     </ul>
+</div>
+
 {% endblock %}

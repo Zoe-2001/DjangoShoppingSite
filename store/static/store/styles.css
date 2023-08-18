@@ -211,3 +211,8 @@ button[type="incrdecr"]:hover {
     background-color: #218838;
 }
 
+.product-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
