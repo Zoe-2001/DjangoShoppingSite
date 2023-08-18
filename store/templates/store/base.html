@@ -16,70 +16,109 @@
 		<link href="{% static 'store/cart.css' %}" rel="stylesheet" type="text/css">
 	</head>
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-        const categories = document.querySelectorAll(".dropdown-menu a");
-        const products = document.querySelectorAll(".product");
+document.addEventListener("DOMContentLoaded", function () {
+    const categories = document.querySelectorAll(".dropdown-menu a");
+    const products = document.querySelectorAll(".product");
 
-        categories.forEach(category => {
-            category.addEventListener("click", function (event) {
-                event.preventDefault();
-                const selectedCategory = this.textContent;
+    categories.forEach(category => {
+        category.addEventListener("click", function (event) {
+            event.preventDefault();
+            const selectedCategory = this.textContent;
 
-                products.forEach(product => {
-                    const productCategory = product.getAttribute("data-category");
-
-                    if (selectedCategory === "All" || selectedCategory === productCategory) {
-                        product.style.display = "block";
-                    } else {
-                        product.style.display = "none";
-                    }
-                });
-            });
-        });
-
-        const genderCategories = document.querySelectorAll(".gender a");
-        genderCategories.forEach(category => {
-            category.addEventListener("click", function (event) {
-                event.preventDefault();
-                const selectedCategory = this.textContent;
-
-                products.forEach(product => {
-                    const productGender = product.getAttribute("data-gender");
-
-                    if (selectedCategory === productGender) {
-                        product.style.display = "block";
-                    } else {
-                        product.style.display = "none";
-                    }
-                });
-            });
-        });
-
-        const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
-
-        addToCartButtons.forEach(button => {
-            button.addEventListener("click", function () {
-                const productId = this.getAttribute("data-product-id");
-                const formData = new FormData();
-                formData.append('product_id', productId);
-
-                fetch('{% url "add_to_cart" %}', {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRFToken': '{{ csrf_token }}',
-                    },
-                    body: formData,
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data.message);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+            products.forEach(product => {
+                const productCategory = product.getAttribute("data-category");
+				console.log("Product Category:", productCategory);
+                if (selectedCategory === "All" || selectedCategory === productCategory) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
             });
         });
     });
+
+    const genderCategories = document.querySelectorAll(".gender a");
+    genderCategories.forEach(category => {
+        category.addEventListener("click", function (event) {
+            event.preventDefault();
+            const selectedCategory = this.textContent;
+
+            products.forEach(product => {
+                const productGender = product.getAttribute("data-gender");
+
+                if (selectedCategory === productGender) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        });
+    });
+
+    const hoverDropdowns = document.querySelectorAll(".hover-dropdown");
+
+    hoverDropdowns.forEach(function (dropdown) {
+        const categoryLink = dropdown.querySelector("a[data-category]");
+        const subMenu = dropdown.querySelector(".sub-menu");
+
+        categoryLink.addEventListener("mouseover", function () {
+            subMenu.style.display = "block";
+        });
+
+        dropdown.addEventListener("mouseleave", function () {
+            subMenu.style.display = "none";
+        });
+    });
+
+    const subMenuLinks = document.querySelectorAll(".sub-menu a");
+
+    subMenuLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const selectedSubCategory = this.textContent;
+            const selectedCategory = this.closest(".hover-dropdown").querySelector("a[data-category]").textContent;;
+
+            products.forEach(product => {
+                const productSubCategory = product.getAttribute("data-subcategory");
+				const productCategory = product.getAttribute("data-category");
+
+                if (selectedSubCategory === productSubCategory &&
+                    selectedCategory === productCategory) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        });
+    });
+
+    const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const productId = this.getAttribute("data-product-id");
+            const formData = new FormData();
+            formData.append('product_id', productId);
+
+            fetch('/path/to/add_to_cart/', { // Replace with your add_to_cart URL
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+});
+
+
 	</script>
 	<body>
 		<header>

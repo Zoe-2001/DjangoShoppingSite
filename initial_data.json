@@ -3,10 +3,11 @@
     "model": "store.product",
     "pk": 1,
     "fields": {
-      "name": "Men's Training Shirt",
+      "name": "Men's Training Tops",
       "category": "Training",
+      "subcategory": "tops",
       "gender": "Men",
-      "image": "/static/images/mencloth.jpg",
+      "image": "/static/images/mentrainingtops.png",
       "price": "10.99"
     }
   },
@@ -14,65 +15,71 @@
     "model": "store.product",
     "pk": 2,
     "fields": {
-      "name": "Women's Yoga Bra",
-      "category": "Yoga",
-      "gender": "Women",
-      "image": "/static/images/womenyogabra.png",
-      "price": "28.99"
+      "name": "Men's Training Tops",
+      "category": "Training",
+      "subcategory": "tops",
+      "gender": "Men",
+      "image": "/static/images/mentrainingtops2.png",
+      "price": "10.99"
     }
   },
   {
     "model": "store.product",
     "pk": 3,
     "fields": {
-      "name": "Men's Compression T-shirt",
-      "category": "Yoga",
+      "name": "Men's Training Shoes",
+      "category": "Training",
+      "subcategory": "shoes",
       "gender": "Men",
-      "image": "/static/images/mencompression.png",
-      "price": "20.99"
+      "image": "/static/images/mentrainingshoes.png",
+      "price": "10.99"
     }
   },
   {
     "model": "store.product",
     "pk": 4,
     "fields": {
-      "name": "Women's Running Shorts",
-      "category": "Running",
-      "gender": "Women",
-      "image": "/static/images/womenhomeshorts.png",
-      "price": "18.99"
+      "name": "Men's Training Shoes",
+      "category": "Training",
+      "subcategory": "shoes",
+      "gender": "Men",
+      "image": "/static/images/mentrainingshoes2.png",
+      "price": "10.99"
     }
   },
   {
     "model": "store.product",
     "pk": 5,
     "fields": {
-      "name": "Men's Swimming Suit",
-      "category": "Swimming",
+      "name": "Men's Training Ball",
+      "category": "Training",
+      "subcategory": "accessories",
       "gender": "Men",
-      "image": "/static/images/menswimsuit.png",
-      "price": "20.99"
+      "image": "/static/images/mentrainingball.png",
+      "price": "10.99"
     }
   },
   {
     "model": "store.product",
     "pk": 6,
     "fields": {
-      "name": "Women's Swimming Suit",
-      "category": "Yoga",
-      "gender": "Women",
-      "image": "/static/images/womenswimsuit.png",
-      "price": "20.99"
+      "name": "Men's Training Bag",
+      "category": "Training",
+      "subcategory": "accessories",
+      "gender": "Men",
+      "image": "/static/images/mentrainingbag.png",
+      "price": "10.99"
     }
   },
   {
     "model": "store.product",
     "pk": 7,
     "fields": {
-      "name": "Men's Cheaper Swimming Suit",
-      "category": "Swimming",
+      "name": "Men's Training Bag",
+      "category": "Training",
+      "subcategory": "accessories",
       "gender": "Men",
-      "image": "/static/images/menswimsuit.png",
+      "image": "/static/images/mentrainingbag2.png",
       "price": "10.99"
     }
   },
@@ -80,22 +87,1170 @@
     "model": "store.product",
     "pk": 8,
     "fields": {
-      "name": "Women's Hydration Pack",
-      "category": "Cycling",
+      "name": "Women's Training Tops",
+      "category": "Training",
+      "subcategory": "tops",
       "gender": "Women",
-      "image": "/static/images/womenbag.png",
-      "price": "20.99"
+      "image": "/static/images/womentrainingtops.png",
+      "price": "10.99"
     }
   },
   {
     "model": "store.product",
     "pk": 9,
     "fields": {
-      "name": "Men's Hydration Pack",
-      "category": "Cycling",
+      "name": "Women's Training Tops",
+      "category": "Training",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womentrainingtops2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 10,
+    "fields": {
+      "name": "Women's Training Shoes",
+      "category": "Training",
+      "subcategory": "shoes",
+      "gender": "Women",
+      "image": "/static/images/womentrainingshoes.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 11,
+    "fields": {
+      "name": "Women's Training Shoes",
+      "category": "Training",
+      "subcategory": "shoes",
+      "gender": "Women",
+      "image": "/static/images/womentrainingshoes2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 12,
+    "fields": {
+      "name": "Women's Training Ball",
+      "category": "Training",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womentrainingball.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 13,
+    "fields": {
+      "name": "Women's Training Bag",
+      "category": "Training",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womentrainingbags.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 14,
+    "fields": {
+      "name": "Women's Training Bag",
+      "category": "Training",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womentrainingbags2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 15,
+    "fields": {
+      "name": "Women's Training Bag",
+      "category": "Training",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womentrainingbags3.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 16,
+    "fields": {
+      "name": "Women's Training Bag",
+      "category": "Training",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womentrainingbags4.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 17,
+    "fields": {
+      "name": "Men's Running Socks",
+      "category": "Running",
+      "subcategory": "socks",
       "gender": "Men",
-      "image": "/static/images/menbag.png",
+      "image": "/static/images/menrunningsocks.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 18,
+    "fields": {
+      "name": "Men's Running Socks",
+      "category": "Running",
+      "subcategory": "socks",
+      "gender": "Men",
+      "image": "/static/images/menrunningsocks2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 19,
+    "fields": {
+      "name": "Men's Running Socks",
+      "category": "Running",
+      "subcategory": "socks",
+      "gender": "Men",
+      "image": "/static/images/menrunningsocks3.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 20,
+    "fields": {
+      "name": "Men's Running Glasses",
+      "category": "Running",
+      "subcategory": "accessories",
+      "gender": "Men",
+      "image": "/static/images/menrunningglasses.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 21,
+    "fields": {
+      "name": "Men's Running Glasses",
+      "category": "Running",
+      "subcategory": "accessories",
+      "gender": "Men",
+      "image": "/static/images/menrunningglasses2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 22,
+    "fields": {
+      "name": "Men's Running Pants",
+      "category": "Running",
+      "subcategory": "pants",
+      "gender": "Men",
+      "image": "/static/images/menrunningpants.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 23,
+    "fields": {
+      "name": "Men's Running Shorts",
+      "category": "Running",
+      "subcategory": "pants",
+      "gender": "Men",
+      "image": "/static/images/menrunningshorts.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 24,
+    "fields": {
+      "name": "Men's Running Tops",
+      "category": "Running",
+      "subcategory": "tops",
+      "gender": "Men",
+      "image": "/static/images/menrunningtops.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 25,
+    "fields": {
+      "name": "Men's Running Tops",
+      "category": "Running",
+      "subcategory": "tops",
+      "gender": "Men",
+      "image": "/static/images/menrunningtops2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 26,
+    "fields": {
+      "name": "Men's Running Shoes",
+      "category": "Running",
+      "subcategory": "shoes",
+      "gender": "Men",
+      "image": "/static/images/menrunningshoes.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 27,
+    "fields": {
+      "name": "Men's Running Shoes",
+      "category": "Running",
+      "subcategory": "shoes",
+      "gender": "Men",
+      "image": "/static/images/menrunningshoes2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 28,
+    "fields": {
+      "name": "Women's Running Socks",
+      "category": "Running",
+      "subcategory": "socks",
+      "gender": "Women",
+      "image": "/static/images/womenrunningsocks.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 29,
+    "fields": {
+      "name": "Women's Running Socks",
+      "category": "Running",
+      "subcategory": "socks",
+      "gender": "Women",
+      "image": "/static/images/womenrunningsocks2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 30,
+    "fields": {
+      "name": "Women's Running Socks",
+      "category": "Running",
+      "subcategory": "socks",
+      "gender": "Women",
+      "image": "/static/images/womenrunningsocks3.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 31,
+    "fields": {
+      "name": "Women's Running Glasses",
+      "category": "Running",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womenrunningglasses.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 32,
+    "fields": {
+      "name": "Women's Running Glasses",
+      "category": "Running",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womenrunningglasses2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 33,
+    "fields": {
+      "name": "Women's Running Glasses",
+      "category": "Running",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womenrunningglasses3.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 34,
+    "fields": {
+      "name": "Women's Running Pants",
+      "category": "Running",
+      "subcategory": "pants",
+      "gender": "Women",
+      "image": "/static/images/womenrunningpants.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 35,
+    "fields": {
+      "name": "Women's Running Shorts",
+      "category": "Running",
+      "subcategory": "pants",
+      "gender": "Women",
+      "image": "/static/images/womenrunningshorts.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 36,
+    "fields": {
+      "name": "Women's Running Tops",
+      "category": "Running",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womenrunningtops.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 37,
+    "fields": {
+      "name": "Women's Running Tops",
+      "category": "Running",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womenrunningtops2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 38,
+    "fields": {
+      "name": "Women's Running Shoes",
+      "category": "Running",
+      "subcategory": "shoes",
+      "gender": "Women",
+      "image": "/static/images/womenrunningshoes.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 39,
+    "fields": {
+      "name": "Women's Running Shoes",
+      "category": "Running",
+      "subcategory": "shoes",
+      "gender": "Women",
+      "image": "/static/images/womenrunningshoes2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 40,
+    "fields": {
+      "name": "Men's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Men",
+      "image": "/static/images/menyogamats.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 41,
+    "fields": {
+      "name": "Men's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Men",
+      "image": "/static/images/menyogamats2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 42,
+    "fields": {
+      "name": "Men's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Men",
+      "image": "/static/images/menyogamats3.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 43,
+    "fields": {
+      "name": "Men's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Men",
+      "image": "/static/images/menyogamats4.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 44,
+    "fields": {
+      "name": "Men's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Men",
+      "image": "/static/images/menyogatops.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 45,
+    "fields": {
+      "name": "Men's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Men",
+      "image": "/static/images/menyogatops2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 46,
+    "fields": {
+      "name": "Men's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Men",
+      "image": "/static/images/menyogatops3.png",
+      "price": "10.99"
+    }
+  },
+
+  {
+    "model": "store.product",
+    "pk": 47,
+    "fields": {
+      "name": "Women's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womenyogamats.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 48,
+    "fields": {
+      "name": "Women's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womenyogamats2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 49,
+    "fields": {
+      "name": "Women's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womenyogamats3.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 50,
+    "fields": {
+      "name": "Women's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womenyogamats4.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 51,
+    "fields": {
+      "name": "Women's Yoga Mat",
+      "category": "Yoga",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womenyogamats5.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 52,
+    "fields": {
+      "name": "Women's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womenyogatops.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 53,
+    "fields": {
+      "name": "Women's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womenyogatops2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 54,
+    "fields": {
+      "name": "Women's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womenyogatops3.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 55,
+    "fields": {
+      "name": "Women's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womenyogatops4.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 56,
+    "fields": {
+      "name": "Women's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womenyogatops5.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 57,
+    "fields": {
+      "name": "Women's Yoga Top",
+      "category": "Yoga",
+      "subcategory": "tops",
+      "gender": "Women",
+      "image": "/static/images/womenyogatops6.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 58,
+    "fields": {
+      "name": "Women's Yoga Pants",
+      "category": "Yoga",
+      "subcategory": "pants",
+      "gender": "Women",
+      "image": "/static/images/womenyogapants.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 59,
+    "fields": {
+      "name": "Women's Yoga Pants",
+      "category": "Yoga",
+      "subcategory": "pants",
+      "gender": "Women",
+      "image": "/static/images/womenyogapants2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 60,
+    "fields": {
+      "name": "Women's Yoga Pants",
+      "category": "Yoga",
+      "subcategory": "pants",
+      "gender": "Women",
+      "image": "/static/images/womenyogapants3.png",
+      "price": "10.99"
+    }
+  },
+
+  {
+    "model": "store.product",
+    "pk": 61,
+    "fields": {
+      "name": "Men's Swimming Cap",
+      "category": "Swimming",
+      "subcategory": "caps",
+      "gender": "Men",
+      "image": "/static/images/menswimcap.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 62,
+    "fields": {
+      "name": "Men's Swimming Cap",
+      "category": "Swimming",
+      "subcategory": "caps",
+      "gender": "Men",
+      "image": "/static/images/menswimcap2.png",
+      "price": "10.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 63,
+    "fields": {
+      "name": "Men's Swimming Cap",
+      "category": "Swimming",
+      "subcategory": "caps",
+      "gender": "Men",
+      "image": "/static/images/menswimcap3.png",
+      "price": "10.99"
+    }
+  },
+
+  {
+    "model": "store.product",
+    "pk": 64,
+    "fields": {
+      "name": "Men's Cycling Shoes",
+      "category": "Cycling",
+      "subcategory": "shoes",
+      "gender": "Men",
+      "image": "/static/images/mencyclingshoes.png",
+      "price": "30.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 65,
+    "fields": {
+      "name": "Men's Cycling Shoes",
+      "category": "Cycling",
+      "subcategory": "shoes",
+      "gender": "Men",
+      "image": "/static/images/mencyclingshoes2.png",
+      "price": "30.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 66,
+    "fields": {
+      "name": "Men's Cycling Shoes",
+      "category": "Cycling",
+      "subcategory": "shoes",
+      "gender": "Men",
+      "image": "/static/images/mencyclingshoes3.png",
+      "price": "30.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 67,
+    "fields": {
+      "name": "Men's Cycling Shoes",
+      "category": "Cycling",
+      "subcategory": "shoes",
+      "gender": "Men",
+      "image": "/static/images/mencyclingshoes4.png",
+      "price": "30.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 68,
+    "fields": {
+      "name": "Men's Cycling Helmet",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Men",
+      "image": "/static/images/mencyclinghelmet.png",
+      "price": "15.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 69,
+    "fields": {
+      "name": "Men's Cycling Helmet",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Men",
+      "image": "/static/images/mencyclinghelmet2.png",
+      "price": "15.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 70,
+    "fields": {
+      "name": "Men's Cycling Helmet",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Men",
+      "image": "/static/images/mencyclinghelmet3.png",
+      "price": "15.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 71,
+    "fields": {
+      "name": "Men's Cycling Jacket",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Men",
+      "image": "/static/images/mencyclingtops.png",
+      "price": "40.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 72,
+    "fields": {
+      "name": "Men's Cycling Jacket",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Men",
+      "image": "/static/images/mencyclingtops2.png",
+      "price": "40.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 73,
+    "fields": {
+      "name": "Men's Cycling Jacket",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Men",
+      "image": "/static/images/mencyclingtops3.png",
+      "price": "40.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 74,
+    "fields": {
+      "name": "Men's Cycling Hydration Pack",
+      "category": "Cycling",
+      "subcategory": "accessories",
+      "gender": "Men",
+      "image": "/static/images/mencyclingbag.png",
+      "price": "40.99"
+    }
+  },
+
+  {
+    "model": "store.product",
+    "pk": 75,
+    "fields": {
+      "name": "Women's Cycling Shoes",
+      "category": "Cycling",
+      "subcategory": "shoes",
+      "gender": "Women",
+      "image": "/static/images/womencyclingshoes.png",
+      "price": "30.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 76,
+    "fields": {
+      "name": "Women's Cycling Shoes",
+      "category": "Cycling",
+      "subcategory": "shoes",
+      "gender": "Women",
+      "image": "/static/images/womencyclingshoes2.png",
+      "price": "30.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 77,
+    "fields": {
+      "name": "Women's Cycling Shoes",
+      "category": "Cycling",
+      "subcategory": "shoes",
+      "gender": "Women",
+      "image": "/static/images/womencyclingshoes3.png",
+      "price": "30.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 78,
+    "fields": {
+      "name": "Women's Cycling Shoes",
+      "category": "Cycling",
+      "subcategory": "shoes",
+      "gender": "Women",
+      "image": "/static/images/womencyclingshoes4.png",
+      "price": "30.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 79,
+    "fields": {
+      "name": "Women's Cycling Helmet",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Women",
+      "image": "/static/images/womencyclinghelmet.png",
+      "price": "15.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 80,
+    "fields": {
+      "name": "Women's Cycling Helmet",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Women",
+      "image": "/static/images/womencyclinghelmet2.png",
+      "price": "15.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 81,
+    "fields": {
+      "name": "Women's Cycling Helmet",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Women",
+      "image": "/static/images/womencyclinghelmet3.png",
+      "price": "15.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 82,
+    "fields": {
+      "name": "Women's Cycling Jacket",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Women",
+      "image": "/static/images/womencyclingtops.png",
+      "price": "40.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 83,
+    "fields": {
+      "name": "Women's Cycling Jacket",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Women",
+      "image": "/static/images/womencyclingtops2.png",
+      "price": "40.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 84,
+    "fields": {
+      "name": "Women's Cycling Jacket",
+      "category": "Cycling",
+      "subcategory": "helmet",
+      "gender": "Women",
+      "image": "/static/images/womencyclingtops3.png",
+      "price": "40.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 85,
+    "fields": {
+      "name": "Women's Cycling Hydration Pack",
+      "category": "Cycling",
+      "subcategory": "accessories",
+      "gender": "Women",
+      "image": "/static/images/womencyclingbag.png",
+      "price": "40.99"
+    }
+  },
+
+
+  {
+    "model": "store.product",
+    "pk": 86,
+    "fields": {
+      "name": "Kids' Running Shoes",
+      "category": "Running",
+      "subcategory": "shoes",
+      "gender": "Kids",
+      "image": "/static/images/kidsrunningshoes.png",
+      "price": "80.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 87,
+    "fields": {
+      "name": "Kids' Running Shoes",
+      "category": "Running",
+      "subcategory": "shoes",
+      "gender": "Kids",
+      "image": "/static/images/kidsrunningshoes2.png",
+      "price": "80.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 88,
+    "fields": {
+      "name": "Kids' Running Shoes",
+      "category": "Running",
+      "subcategory": "shoes",
+      "gender": "Kids",
+      "image": "/static/images/kidsrunningshoes3.png",
+      "price": "80.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 89,
+    "fields": {
+      "name": "Kids' Running Shoes",
+      "category": "Running",
+      "subcategory": "shoes",
+      "gender": "Kids",
+      "image": "/static/images/kidsrunningshoes4.png",
+      "price": "80.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 90,
+    "fields": {
+      "name": "Kids' Swimming Shorts",
+      "category": "Swimming",
+      "subcategory": "shorts",
+      "gender": "Kids",
+      "image": "/static/images/kidsswimshorts.png",
+      "price": "80.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 91,
+    "fields": {
+      "name": "Kids' Swimming Shorts",
+      "category": "Swimming",
+      "subcategory": "shorts",
+      "gender": "Kids",
+      "image": "/static/images/kidsswimshorts2.png",
+      "price": "80.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 92,
+    "fields": {
+      "name": "Kids' Swimming Shorts",
+      "category": "Swimming",
+      "subcategory": "shorts",
+      "gender": "Kids",
+      "image": "/static/images/kidsswimshorts3.png",
+      "price": "80.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 93,
+    "fields": {
+      "name": "Kids' Swimming Shorts",
+      "category": "Swimming",
+      "subcategory": "shorts",
+      "gender": "Kids",
+      "image": "/static/images/kidsswimshorts4.png",
+      "price": "80.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 94,
+    "fields": {
+      "name": "Kids' Swimming Suit",
+      "category": "Swimming",
+      "subcategory": "suit",
+      "gender": "Kids",
+      "image": "/static/images/kidsswimsuit.png",
       "price": "20.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 95,
+    "fields": {
+      "name": "Kids' Swimming Tops",
+      "category": "Swimming",
+      "subcategory": "tops",
+      "gender": "Kids",
+      "image": "/static/images/kidsswimtops.png",
+      "price": "20.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 96,
+    "fields": {
+      "name": "Kids' Swimming Paddles",
+      "category": "Swimming",
+      "subcategory": "accessories",
+      "gender": "Kids",
+      "image": "/static/images/kidsswimpaddle.png",
+      "price": "20.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 97,
+    "fields": {
+      "name": "Kids' Swimming Paddles",
+      "category": "Swimming",
+      "subcategory": "accessories",
+      "gender": "Kids",
+      "image": "/static/images/kidsswimpaddle2.png",
+      "price": "20.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 98,
+    "fields": {
+      "name": "Kids' Swimming Cap",
+      "category": "Swimming",
+      "subcategory": "cap",
+      "gender": "Kids",
+      "image": "/static/images/kidscap.png",
+      "price": "20.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 99,
+    "fields": {
+      "name": "Kids' Swimming Cap",
+      "category": "Swimming",
+      "subcategory": "cap",
+      "gender": "Kids",
+      "image": "/static/images/kidscap2.png",
+      "price": "20.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 100,
+    "fields": {
+      "name": "Kids' Swimming Googles",
+      "category": "Swimming",
+      "subcategory": "accessories",
+      "gender": "Kids",
+      "image": "/static/images/kidsgoogles.png",
+      "price": "35.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 101,
+    "fields": {
+      "name": "Kids' Swimming Googles",
+      "category": "Swimming",
+      "subcategory": "accessories",
+      "gender": "Kids",
+      "image": "/static/images/kidsgoogles2.png",
+      "price": "35.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 102,
+    "fields": {
+      "name": "Kids' Swimming Googles",
+      "category": "Swimming",
+      "subcategory": "accessories",
+      "gender": "Kids",
+      "image": "/static/images/kidsgoogles3.png",
+      "price": "35.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 103,
+    "fields": {
+      "name": "Kids' Running Socks",
+      "category": "Running",
+      "subcategory": "socks",
+      "gender": "Kids",
+      "image": "/static/images/kidsrunningsocks.png",
+      "price": "15.99"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 104,
+    "fields": {
+      "name": "Kids' Running Glasses",
+      "category": "Running",
+      "subcategory": "accessories",
+      "gender": "Kids",
+      "image": "/static/images/kidsrunningglasses.png",
+      "price": "35.99"
     }
   }
 ]

@@ -10,14 +10,27 @@ class Product(models.Model):
         ('Cycling', 'Cycling'),
         # Add more categories as needed
     )
-
+    SUBCATEGORIES = (
+        ('tops', 'tops'),
+        ('shorts', 'shorts'),
+        ('pants', 'pants'),
+        ('underwear', 'underwear'),
+        ('accessories', 'accessories'),
+        ('suit', 'suit'),
+        ('caps', 'caps'),
+        ('socks', 'socks'),
+        ('shoes', 'shoes'),
+        ('helmet', 'helmet'),
+    )
     GENDER_CHOICES = (
         ('Men', 'Men'),
         ('Women', 'Women'),
+        ('Kids', 'Kids'),
     )
 
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+    subcategory = models.CharField(max_length=20, choices=SUBCATEGORIES)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     image = models.ImageField(upload_to='store/static/images')
     price = models.DecimalField(max_digits=6, decimal_places=2)

@@ -17,7 +17,7 @@ from store.models import Product, CartItem
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.contrib import messages
 import json
-
+from django.db.models import Count
 
 def login_action(request):
     context = {}
@@ -180,3 +180,13 @@ def decrease_quantity(request, cart_item_id):
         messages.error(request, 'Cart item not found.')
 
     return redirect('cart')
+
+
+def best_sellers_view(request):
+    best_sellers = Product.objects.annotate(num_sales=Count('cartitem')).order_by('-num_sales')[:5]
+
+    context = {
+        'best_sellers': best_sellers,
+    }
+
+    return render(request, 'best_sellers.html', context)

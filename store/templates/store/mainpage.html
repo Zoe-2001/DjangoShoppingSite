@@ -15,24 +15,69 @@
             <li class="dropdown">
                 <a href="#">Categories &#9662;</a>
                 <ul class="dropdown-menu">
-                <li><a href="#" data-category="All">All</a></li>
-                <li><a href="#" data-category="Running">Running</a></li>
-                <li><a href="#" data-category="Training">Training</a></li>
-                <li><a href="#" data-category="Yoga">Yoga</a></li>
-                <li><a href="#" data-category="Swimming">Swimming</a></li>
-                <li><a href="#" data-category="Cycling">Cycling</a></li>
+                <li>
+                    <a href="#" data-category="All">All</a>
+                </li>
+                <li class="hover-dropdown">
+                    <ul class="sub-menu">
+                        <li><a href="#" data-subcategory="tops">tops</a></li>
+                        <li><a href="#" data-subcategory="shoes">shoes</a></li>
+                        <li><a href="#" data-subcategory="pants">pants</a></li>
+                        <li><a href="#" data-subcategory="socks">socks</a></li>
+                        <li><a href="#" data-subcategory="accessories">accessories</a></li>
+                    </ul>
+                    <a href="#" data-category="Running">Running</a>
+                </li>
+                    <li class="hover-dropdown">
+                    <ul class="sub-menu">
+                        <li><a href="#" data-subcategory="tops">tops</a></li>
+                        <li><a href="#" data-subcategory="shoes">shoes</a></li>
+                        <li><a href="#" data-subcategory="accessories">accessories</a></li>
+                    </ul>
+                    <a href="#" data-category="Training">Training</a>
+                </li>
+                    <li class="hover-dropdown">
+                    <ul class="sub-menu">
+                        <li><a href="#" data-subcategory="tops">tops</a></li>
+                        <li><a href="#" data-subcategory="pants">pants</a></li>
+                        <li><a href="#" data-subcategory="accessories">accessories</a></li>
+                    </ul>
+                    <a href="#" data-category="Yoga">Yoga</a>
+                </li>
+                    <li class="hover-dropdown">
+                    <ul class="sub-menu">
+                        <li><a href="#" data-subcategory="suit">suit</a></li>
+                        <li><a href="#" data-subcategory="shorts">shorts</a></li>
+                        <li><a href="#" data-subcategory="caps">caps</a></li>
+                        <li><a href="#" data-subcategory="accessories">accessories</a></li>
+                    </ul>
+                    <a href="#" data-category="Swimming">Swimming</a>
+                </li>
+                    <li class="hover-dropdown">
+                    <ul class="sub-menu">
+                        <li><a href="#" data-subcategory="tops">tops</a></li>
+                        <li><a href="#" data-subcategory="shoes">shoes</a></li>
+                        <li><a href="#" data-subcategory="helmet">helmet</a></li>
+                        <li><a href="#" data-subcategory="accessories">accessories</a></li>
+                    </ul>
+                    <a href="#" data-category="Cycling">Cycling</a>
+                </li>
                 </ul>
             </li>
             <ul class="gender">
               <li><a href="#" data-gender="Men">Men</a></li>
               <li><a href="#" data-gender="Women">Women</a></li>
+              <li><a href="#" data-gender="Kids">Kids</a></li>
+            </ul>
+            <ul>
+              <li><a href="{% url 'best_sellers' %}">Best 5 sellers</a></li>
             </ul>
 
         </ul>
     </nav>
     <main>
         {% for product in products %}
-        <section class="product" data-product-id="{{ product.id }}" data-category="{{ product.category }}" data-gender="{{ product.gender }}">
+        <section class="product" data-product-id="{{ product.id }}" data-category="{{ product.category }}" data-subcategory="{{ product.subcategory }}" data-gender="{{ product.gender }}">
             <img src="{{ product.image.url }}" alt="{{ product.name }}">
             <h3>{{ product.name }}</h3>
             <p class="price">${{ product.price }}</p>

@@ -44,6 +44,42 @@ nav li a {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+/* Style the sub-menu links */
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f69679;
+}
+
+.hover-dropdown:hover .sub-menu {
+    display: block; /* Show the sub-menu on hover */
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    left: 100%; /* Position the sub-menu to the right */
+    background-color: #333;
+    z-index: 2; /* Ensure the sub-menu is above other content */
+}
+
+.sub-menu a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sub-menu a:hover {
+    background-color: #f69679;
+}
 
 main {
     display: flex;
