@@ -1,5 +1,4 @@
-Yuchen Dai - First Task for Internship
-/* A non-live website for a client's sports apparel store*/
+/* A non-live website - sports apparel store*/
 
 =====================SETUP======================================
 
